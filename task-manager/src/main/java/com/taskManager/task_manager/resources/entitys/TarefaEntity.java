@@ -3,13 +3,20 @@ package com.taskManager.task_manager.resources.entitys;
 import jakarta.persistence.*;
 import lombok.*;
 
+
+
 @Entity
 @Table (name = "Tarefa")
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class TarefaEntity {
+
+    private enum prioridade {
+        BAIXA, MEDIA, ALTA
+    };
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -23,4 +30,6 @@ public class TarefaEntity {
     private String descricao;
 
     private String dataCriacao;
+
+    private prioridade prioridade;
 }
