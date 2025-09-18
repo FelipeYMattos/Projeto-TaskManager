@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Bem-vindo, Administrador!</h2>
+    
+    <section>
+      <h3>Usuários</h3>
+      <button id="showFormBtn">Criar Usuário</button>
+      <!-- Formulário oculto inicialmente -->
+      <div id="newUserContainer" style="display: none; margin-top: 20px; padding: 15px; background-color: #3a3a3a; border-radius: 10px;">
+        <form id="newUserForm">
+          <input type="text" id="newName" placeholder="Nome" required>
+          <input type="email" id="newEmail" placeholder="Email" required>
+          <input type="password" id="newSenha" placeholder="Senha" required>
+          <input type="text" id="newCPF" placeholder="CPF" required>
+          <select id="newCargo" required>
+            <option value="">Selecione o cargo</option>
+            <option value="RH">RH (Admin)</option>
+            <option value="Funcionario">Funcionário (User)</option>
+          </select>
+          <button type="submit" id="botaoEnviarUser">Enviar</button>
+        </form>
+      </div>
+
+      <!-- Tabela de usuários existente -->
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Cargo</th>
+            <th>CPF</th>
+            <th>Ações</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="userTable">
+          
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h3>Tarefas atribuídas</h3>
+      <button id="botaoCriarTarefa">Criar Tarefa</button>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Usuário</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="taskTable">
+          
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="scriptAdmin.js"></script>
+</body>
+</html>
