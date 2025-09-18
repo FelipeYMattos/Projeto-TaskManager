@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/tarefa")
 public class TarefaController {
@@ -29,8 +31,15 @@ public class TarefaController {
     }
 
     @CrossOrigin
+    @GetMapping("/all")
+    private ResponseEntity<List<TarefaEntity>> metodoGetPorId(){
+        return ResponseEntity.ok(service.getTodasTarefas());
+    }
+
+
+    @CrossOrigin
     @DeleteMapping("/{id}")
-    private ResponseEntity<Void> metodoDeletePorId(Integer id){
+    private ResponseEntity<Void> metodoDeletePorId(@PathVariable Integer id){
         service.deleteTarefaPorId(id);
         return ResponseEntity.ok().build();
     }

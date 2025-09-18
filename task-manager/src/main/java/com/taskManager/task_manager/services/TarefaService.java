@@ -4,6 +4,8 @@ import com.taskManager.task_manager.resources.entitys.TarefaEntity;
 import com.taskManager.task_manager.resources.repository.TarefaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TarefaService {
 
@@ -17,6 +19,10 @@ public class TarefaService {
         return repository.findById(id).orElseThrow(
                 () -> new RuntimeException("Tarefa não encontrada")
         );
+    }
+
+    public List<TarefaEntity> getTodasTarefas(){
+        return repository.findAll();
     }
 
     public void postTarefa(TarefaEntity tarefa){

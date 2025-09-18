@@ -19,6 +19,10 @@ public class UsuarioService {
         );
     }
 
+    public UsuarioEntity getUsuarioPorEmail(String email){
+        return repository.findByEmail(email);
+    }
+
     public List<UsuarioEntity> getTodosUsuarios(){
         return repository.findAll();
     }
