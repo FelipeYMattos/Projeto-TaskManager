@@ -108,4 +108,77 @@ table button:hover {
     padding: 8px;
     font-size: 12px;
   }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
 }
+
+/* Container da tela de login */
+.container {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  width: 320px;
+  text-align: center;
+}
+
+/* Título */
+.container h2 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 22px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  text-align: left;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2b2b2b;
+  color: #fff;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: 2px solid #6a0dad;
+}
+
+/* Botão */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #6a0dad; /* Roxo */
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #520a9e;
+}
+}
+
