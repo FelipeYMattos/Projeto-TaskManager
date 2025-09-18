@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class TarefaService {
 
-    private TarefaRepository repository;
+    private final TarefaRepository repository;
+
+    public TarefaService(TarefaRepository repository) {
+        this.repository = repository;
+    }
 
     public TarefaEntity getTarefaPorId(Integer id){
         return repository.findById(id).orElseThrow(
@@ -29,7 +33,8 @@ public class TarefaService {
         );
 
          TarefaEntity novaTarefa = TarefaEntity.builder()
-                 .id(novosDados.getId())
+                 .id(id)
+                 .idUsuario(novosDados.getIdUsuario() != null ? novosDados.getIdUsuario() : tarefaOriginal.getIdUsuario())
                  .titulo(novosDados.getTitulo() != null ? novosDados.getTitulo() : tarefaOriginal.getTitulo())
                  .descricao(novosDados.getDescricao() != null ? novosDados.getDescricao() : tarefaOriginal.getDescricao())
                  .dataCriacao(novosDados.getDataCriacao() != null ? novosDados.getDataCriacao() : tarefaOriginal.getDataCriacao())

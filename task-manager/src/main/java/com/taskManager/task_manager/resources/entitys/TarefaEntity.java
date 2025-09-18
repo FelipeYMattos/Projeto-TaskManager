@@ -14,10 +14,6 @@ import lombok.*;
 @NoArgsConstructor
 public class TarefaEntity {
 
-    private enum prioridade {
-        BAIXA, MEDIA, ALTA
-    };
-
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -31,5 +27,5 @@ public class TarefaEntity {
 
     private String dataCriacao;
 
-    private prioridade prioridade;
+    private Integer prioridade;
 }
