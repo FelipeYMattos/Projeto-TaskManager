@@ -19,6 +19,21 @@
     </form>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "admin@gmail.com" && password === "admin") {
+        alert("Login bem-sucedido! Bem-vindo, Admin.");
+        // Se quiser, redirecione para outra página:
+        // window.location.href = "dashboard.html";
+      } else {
+        alert("Usuário ou senha incorretos.");
+      }
+    });
+  </script>
 </body>
 </html>
